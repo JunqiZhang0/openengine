@@ -41,6 +41,9 @@ func (p Provisioner) toJSONSchema() Schema {
 				"const": p.Resource,
 			},
 			"args": args,
+			"SystemName": Schema{
+				"type": "string",
+			},
 		},
 	}
 	properties["System"] = p.Match
