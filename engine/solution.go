@@ -85,6 +85,7 @@ func (s Solution) inLoop(solution Solution) bool {
 	return s.parent.inLoop(solution)
 }
 
+//TODO: Can be improved by using map
 func intersect(a []string, b []string) []string {
 	set := make([]string, 0)
 
@@ -128,7 +129,7 @@ func (s *Solution) resolveExplicit() []string {
 // Run solution will resolve implicit arguments and execute solution script
 // nolint: funlen, gocognit, nestif
 // TODO: function is too long and complicatd.
-func (s Solution) Run(solutionArgs map[string]interface{}) (string, error) {
+func (s *Solution) Run(solutionArgs map[string]interface{}) (string, error) {
 	args := make(map[string]interface{})
 	re := regexp.MustCompile(`\$_[[:alpha:]]*`)
 
@@ -254,9 +255,9 @@ func combIntSlices(seq [][]int) (out [][]int) {
 			out = combSeq
 
 			return
-		} else {
-			rec(i+1, seq, combSeq) // if the length of seq is not reached, rec is called to perform another step of combinations
 		}
+		rec(i+1, seq, combSeq) // if the length of seq is not reached, rec is called to perform another step of combinations
+
 	}
 	rec(0, seq, combSeq) // start the first step of combinations
 

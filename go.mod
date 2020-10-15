@@ -5,6 +5,7 @@ go 1.14
 require (
 	github.com/antonfisher/nested-logrus-formatter v1.1.0
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
+	github.com/go-delve/delve v1.5.0 // indirect
 	github.com/go-test/deep v1.0.7
 	github.com/goccy/go-yaml v1.8.0
 	github.com/imdario/mergo v0.3.11
